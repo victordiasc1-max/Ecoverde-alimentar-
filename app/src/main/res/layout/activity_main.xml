@@ -3,172 +3,297 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E8F5E9"
-    android:padding="16dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EcoVerde Alimentar"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#1B5E20"
-        android:layout_marginBottom="12dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sistema de reconhecimento e reaproveitamento de sobras"
-        android:textColor="#2E7D32"
-        android:textSize="16sp"
-        android:layout_marginBottom="20dp" />
-
-    <EditText
-        android:id="@+id/foodNameInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nome do alimento"
-        android:layout_marginBottom="12dp" />
-
-    <EditText
-        android:id="@+id/foodQuantityInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Quantidade"
-        android:layout_marginBottom="12dp" />
+    android:background="#E8F5E9">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="12dp">
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="#F1F9F2">
 
-        <Button
-            android:id="@+id/saveFoodButton"
-            android:layout_width="0dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Salvar"
-            android:backgroundTint="#43A047"
-            android:textColor="#FFFFFF" />
+            android:text="EcoVerde Alimentar"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20" />
 
-        <Button
-            android:id="@+id/clearFoodButton"
-            android:layout_width="0dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Limpar"
-            android:layout_marginStart="8dp"
-            android:backgroundTint="#78909C"
-            android:textColor="#FFFFFF" />
+            android:text="Sistema de reconhecimento e reaproveitamento de sobras"
+            android:textColor="#2E7D32"
+            android:textSize="16sp"
+            android:layout_marginTop="6dp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/suggestionButton"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ver sugestão"
-        android:layout_marginBottom="12dp"
-        android:backgroundTint="#66BB6A"
-        android:textColor="#FFFFFF" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/searchFoodInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Buscar alimento"
-        android:layout_marginBottom="12dp" />
+        <LinearLayout
+            android:id="@+id/dashboardContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
 
-    <Spinner
-        android:id="@+id/categoryFilterSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginBottom="12dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_marginBottom="12dp" />
 
-    <TextView
-        android:id="@+id/summaryTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Total de alimentos: 0"
-        android:textStyle="bold"
-        android:textColor="#1B5E20"
-        android:layout_marginBottom="12dp" />
+            <TextView
+                android:id="@+id/dashboardSummaryTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resumo"
+                android:textColor="#1B5E20"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="#F4FBF4"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/foodRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="#F8FBF8"
-        android:padding="8dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sugestão do dia"
+                android:textColor="#1B5E20"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Receitas"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#1B5E20"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="12dp" />
+            <TextView
+                android:id="@+id/dashboardSuggestionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cadastre um alimento para receber sugestões."
+                android:background="#FFFFFF"
+                android:padding="14dp"
+                android:textColor="#2E7D32"
+                android:layout_marginBottom="16dp" />
 
-    <EditText
-        android:id="@+id/recipeNameInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nome da receita"
-        android:layout_marginBottom="8dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status do sistema"
+                android:textColor="#1B5E20"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/recipeIngredientsInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ingredientes"
-        android:layout_marginBottom="8dp" />
+            <TextView
+                android:id="@+id/statusTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sistema pronto para registrar alimentos e receitas."
+                android:background="#FFFFFF"
+                android:padding="14dp"
+                android:textColor="#2E7D32" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/recipeDescriptionInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Descrição"
-        android:layout_marginBottom="8dp" />
+        <LinearLayout
+            android:id="@+id/foodContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-    <Spinner
-        android:id="@+id/recipeCategorySpinner"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginBottom="12dp" />
+            <EditText
+                android:id="@+id/foodNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome do alimento"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/foodQuantityInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Quantidade"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <Button
+                    android:id="@+id/saveFoodButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Salvar"
+                    android:backgroundTint="#43A047"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/clearFoodButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Limpar"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="#78909C"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/suggestionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver sugestão"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#66BB6A"
+                android:textColor="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/searchFoodInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Buscar alimento"
+                android:layout_marginBottom="12dp" />
+
+            <Spinner
+                android:id="@+id/categoryFilterSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/summaryTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total de alimentos: 0"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_marginBottom="12dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/foodRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#F8FBF8"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recipeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/recipeNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome da receita"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/recipeIngredientsInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingredientes"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/recipeDescriptionInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descrição"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/recipeCategorySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <Button
+                    android:id="@+id/saveRecipeButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Salvar receita"
+                    android:backgroundTint="#43A047"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/clearRecipeButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Limpar"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="#78909C"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recipeRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#F8FBF8"
+                android:padding="8dp" />
+        </LinearLayout>
+    </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="12dp">
+        android:background="#F6FBF6"
+        android:padding="12dp"
+        android:gravity="center">
 
         <Button
-            android:id="@+id/saveRecipeButton"
+            android:id="@+id/dashboardButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Salvar receita"
-            android:backgroundTint="#43A047"
+            android:text="Dashboard"
+            android:backgroundTint="#2E7D32"
             android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/clearRecipeButton"
+            android:id="@+id/foodButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Limpar"
+            android:text="Alimentos"
             android:layout_marginStart="8dp"
-            android:backgroundTint="#78909C"
+            android:backgroundTint="#66BB6A"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/recipeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Receitas"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#5C6BC0"
             android:textColor="#FFFFFF" />
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recipeRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:background="#F8FBF8"
-        android:padding="8dp" />
-
 </LinearLayout>
